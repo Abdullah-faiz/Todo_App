@@ -18,6 +18,7 @@ auth = HTTPBasicAuth()
 
 key = Fernet.generate_key()
 f = Fernet(key)
+print(key)
 
 
 @auth.verify_password
