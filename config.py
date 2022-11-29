@@ -10,7 +10,7 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'xxx-xxxx-xxxx-xxxx'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://abdullahfaiz:12345678@localhost:5432/todoapp'  # os.environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
 class DevelopmentConfig(Config):

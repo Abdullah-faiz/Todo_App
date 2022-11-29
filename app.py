@@ -13,7 +13,7 @@ app.register_blueprint(api_blueprint)
 
 app.config.from_object(os.environ.get("APP_SETTINGS"))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://abdullahfaiz:12345678@localhost:5432/todoapp'  # os.environ['DATABASE_URL']  #os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 db.init_app(app)
 migrate = Migrate(app, db, compare_type=True)
 
